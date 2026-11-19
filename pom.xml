@@ -1,14 +1,18 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.uniform</groupId>
     <artifactId>smart-uniform-system-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
     <name>School Uniform Management System Backend</name>
     <description>Backend for Uniform ERP</description>
+
     <packaging>jar</packaging>
 
     <properties>
@@ -29,7 +33,8 @@
     </dependencyManagement>
 
     <dependencies>
-        <!-- Spring Web -->
+
+        <!-- Spring Boot Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -61,19 +66,33 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
+
+            <!-- Spring Boot Executable JAR Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version> <!-- Version specify pandrom -->
+                <version>${spring-boot.version}</version>
+
                 <configuration>
-                    <mainClass>com.uniform.UniformManagementApplication</mainClass> <!-- Main class specify pandrom -->
+                    <mainClass>com.uniform.UniformManagementApplication</mainClass>
                 </configuration>
+
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
             </plugin>
+
         </plugins>
     </build>
-    
+
 </project>
