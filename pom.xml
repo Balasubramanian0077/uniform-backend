@@ -41,7 +41,7 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- MySQL Driver (H2 removed, MySQL added) -->
+        <!-- MySQL Driver -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
@@ -68,7 +68,12 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version> <!-- Version specify pandrom -->
+                <configuration>
+                    <mainClass>com.uniform.UniformManagementApplication</mainClass> <!-- Main class specify pandrom -->
+                </configuration>
             </plugin>
         </plugins>
     </build>
+    
 </project>
